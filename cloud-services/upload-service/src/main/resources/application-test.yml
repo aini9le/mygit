@@ -1,0 +1,13 @@
+server:
+  port: 8877
+  context-path: 
+spring:
+  application:
+    name: upload
+
+    
+fileUpload.prefix : F:/tools/fileUpload
+fileUpload.imgUrl : file:F:/tools/fileUpload/
+fileUpload.prefixUrl : http://localhost:8877/
+fileUpload.multipart.max-file-size : 20MB
+fileUpload.multipart.max-request-size : 100MB    

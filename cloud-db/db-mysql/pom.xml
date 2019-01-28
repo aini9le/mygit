@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.lii.cloud</groupId>
+    <artifactId>cloud-db</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>db-mysql</artifactId>
+  
+  <dependencies>
+		<dependency>
+			<groupId>com.lii.cloud</groupId>
+			<artifactId>common-entity</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- mybatis-plus begin -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+		
+		<!-- <dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus</artifactId>
+		</dependency> -->
+		
+		<!-- 通用mapper -->
+		<dependency>
+	        <groupId>tk.mybatis</groupId>
+	        <artifactId>mapper-spring-boot-starter</artifactId>
+	        <version>RELEASE</version>
+	    </dependency>
+	    
+	    <!-- pagehelper 分页插件 -->
+	    <dependency>
+	        <groupId>com.github.pagehelper</groupId>
+	        <artifactId>pagehelper-spring-boot-starter</artifactId>
+	        <version>RELEASE</version>
+	    </dependency>
+		
+		<!-- 分页插件 -->  
+        <!-- <dependency>  
+            <groupId>com.github.pagehelper</groupId>  
+            <artifactId>pagehelper</artifactId>  
+            <version>4.1.6</version>  
+        </dependency> -->
+		
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+		</dependency>
+		
+		<!-- 使用generator生成实体时需要打开  -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql-connector-java.version}</version>
+		</dependency>  
+	</dependencies>
+	<build>
+      <resources>
+          <resource>
+              <directory>src/main/resources</directory>
+              <filtering>false</filtering>
+          </resource>
+      </resources>
+  </build>
+</project>

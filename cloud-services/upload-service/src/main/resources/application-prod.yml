@@ -1,0 +1,13 @@
+server:
+  port: 8877
+  context-path: 
+spring:
+  application:
+    name: upload
+
+    
+fileUpload.prefix : /data/resources
+fileUpload.imgUrl : /data/resources
+fileUpload.prefixUrl : http://www.zlcrm.com.cn/
+fileUpload.multipart.max-file-size : 20MB
+fileUpload.multipart.max-request-size : 100MB    

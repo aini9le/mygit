@@ -1,0 +1,3 @@
+本项目为mybatis自动生成实体、dao、xml文件项目，
+当生成文件后将文件拷贝到 对应的项目文件夹下后   删除本次生成的包及文件、 
+切勿删除MybatisGeneratorUtil.java 和generatorConfig.xml 文件

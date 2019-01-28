@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<configuration scan="true" scanPeriod="10 seconds">
+    <contextName>admin_logback</contextName>
+    <!-- 生产环境 -->
+<!--     <property name="log.path" value="/usr/local/admin-services/rent_service/logs/admin-springboot.log"/> -->
+    <!-- 测试环境 -->
+    <property name="log.path" value="D:/tools/logs/admin-springboot.log"/>
+
+    <!--设置日志输出为控制台-->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level [%X{userId}] [%X{requestId}] %logger - %msg%n</pattern>
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+<!--             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern> -->
+        </encoder>
+    </appender>
+    
+     <!-- 设置configuration下的logger的级别为INFO，默认是继承root logger的debug级别 -->
+    <logger name="chapters.configuration" level="info"/>
+    
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}.%d{yyyy-MM-dd}.zip</fileNamePattern>
+              <!-- 每产生一个日志文件，该日志文件的保存期限为15天 -->   
+            <maxHistory>15</maxHistory>   
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date %level [%thread] %logger{36} [%file : %line] %msg%n</pattern>
+            <!-- 记录日志的编码 -->  
+            <charset>UTF-8</charset> <!-- 此处设置字符集 -->
+        </encoder>
+    </appender>
+
+    <root>
+        <level value="info"/>
+        <appender-ref ref="console"/>
+        <appender-ref ref="file"/>
+    </root>
+
+
+</configuration>

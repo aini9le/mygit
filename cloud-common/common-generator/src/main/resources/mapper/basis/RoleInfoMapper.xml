@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lii.cloud.db.mysql.mapper.iMapper.admin.RoleInfoMapper">
+  <resultMap id="BaseResultMap" type="com.lii.cloud.common.entity.admin.po.RoleInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="owner" jdbcType="VARCHAR" property="owner" />
+    <result column="is_enable" jdbcType="CHAR" property="isEnable" />
+    <result column="is_public" jdbcType="INTEGER" property="isPublic" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="enable_date" jdbcType="TIMESTAMP" property="enableDate" />
+    <result column="role_info" jdbcType="LONGVARCHAR" property="roleInfo" />
+  </resultMap>
+</mapper>
