@@ -12,6 +12,7 @@ import com.lii.cloud.admin.tools.UIPageInfo;
 import com.lii.cloud.common.base.concroller.BaseConcroller;
 import com.lii.cloud.common.entity.admin.po.User;
 import com.lii.cloud.common.entity.base.dto.BasePageInfoExampleDTO;
+import com.lii.cloud.common.tools.result.ResultBody;
 
 /**
  * 用户
@@ -30,12 +31,12 @@ public class UserController extends BaseConcroller<User>{
 	 */
 	@RequestMapping(value = "dataGrid")
 	@ResponseBody
-	public UIPageInfo dataGrid(BasePageInfoExampleDTO exDto) {
+	public ResultBody dataGrid(BasePageInfoExampleDTO exDto) {
 		UIPageInfo ui = new UIPageInfo();
 		PageInfo<User> page = userService.dataGridExample(User.class, exDto);
 		ui.setRows(page.getList());
 		ui.setTotal(page.getTotal());
-		return ui;
+		return ResultBody.success("",ui);
 	}
 
 }
