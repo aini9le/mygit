@@ -44,7 +44,7 @@
         <sqlMapGenerator targetPackage="mapper.basis" targetProject="src/main/resources"/>
 
         <!-- 生成DAO的包名和位置-->  
-        <javaClientGenerator targetPackage="com.lii.cloud.db.mysql.mapper.iMapper.admin" targetProject="src/main/java"
+        <javaClientGenerator targetPackage="com.lii.cloud.db.mysql.mapper.imapper.admin" targetProject="src/main/java"
                              type="XMLMAPPER"/>
 
         <!-- 生成所有的表 -->

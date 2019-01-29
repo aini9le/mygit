@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>菜单编辑主页</title>
+<div th:include="main/head"></div>
+</head>
+<body>
+<div class="modal-body" style="height:370px;">
+<form id="roleEditForm"  method="post">
+    <input type="hidden" name="id" th:value="${role.id}" />
+    <table class="form">
+       <tr>
+        <th class="formTitle">角色名称</th>
+        <td class="formValue">
+            <input type="text" maxlength="" isvalid="yes" checkexpession="NotNull"  style="width: 200px;" 
+               class="form-control" name="roleName" placeholder="请填写帐号"  th:value="${role.roleName}"/>
+        </td>
+       </tr>
+       <tr>
+        <th class="formTitle">角色描述	</th>
+        <td class="formValue">
+            <input type="text" class="form-control" name="roleInfo" placeholder="请输入名称"  th:value="${role.roleInfo}"
+            isvalid="yes" checkexpession="NotNull" maxlength="200"/>
+        </td>
+       </tr>
+       <tr>
+        <th class="formTitle">否为启用</th>
+        <td class="formValue">
+        <select class="form-control" style="width:179px;" name="isEnable">
+                                        <option value="Y" th:selected="${role.isEnable=='Y'}">是</option>
+	                                    <option value="N" th:selected="${role.isEnable=='N'}">否</option>
+	                     </select>
+	    </td>                 
+       </tr>
+    </table>
+</form>
+</div>
+ <footer>
+	<div class="form-button" id="wizard-actions" style="text-align: center;">
+	<!--         <a id="btn_last" disabled class="btn btn-default btn-prev">上一步</a> -->
+<!-- 	        <a id="btn_next" class="btn btn-default btn-next">下一步</a> -->
+	     <a id="btn_save" class="btn btn-success">填写完成,提交表单</a>
+	 </div>
+ </footer>
+ <div th:include="main/scripts"></div>
+</body>
+<script th:src="@{/plugins/superui/superui/content/plugins/iCheck/icheck.min.js}"></script>
+<script th:src="@{/js/role/editIndex.js}" type="text/javascript"></script>
+<script th:src="@{/tools/formAjaxAction.js}"></script>
+<script th:src="@{/plugins/superui/superui/content/plugins/validator/validator.js}"></script>
+</html>

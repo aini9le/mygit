@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>用户主页</title>
+<!-- Bootstrap 3.3.6 -->
+<link th:href="@{/plugins/superui/superui/content/ui/global/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/> 
+<!-- Font Awesome -->
+<link th:href="@{/plugins/superui/superui/content/ui/global/font-awesome/css/font-awesome.css}" rel="stylesheet" />
+<!-- Theme style -->
+<link th:href="@{/plugins/superui/superui/content/adminlte/dist/css/AdminLTE.css}" rel="stylesheet"/>
+<link th:href="@{/plugins/superui/superui/content/adminlte/dist/css/skins/_all-skins.min.css}" rel="stylesheet"/>
+<link th:href="@{/plugins/superui/superui/content/min/css/supershopui.common.min.css}" rel="stylesheet" />
+<link th:href="@{/plugins/superui/superui/content/plugins/bootstrap-table/bootstrap-table.css}" rel="stylesheet" />
+<!--全局通用框架样式 end-->
+<script th:src="@{/tools/MainConfig.js}"></script>
+<script type="text/javascript" th:inline="javascript">
+MainConfig.setContextPath([[${#httpServletRequest.getContextPath()}]]);
+</script>
+</head>
+<body>
+    <!-- Main content -->
+    <section class="content">
+
+        <div class="row">
+                <!-- BEGIN SAMPLE TABLE PORTLET-->
+                <div class="col-md-12">
+                    <!-- BEGIN SAMPLE TABLE PORTLET-->
+                    <div ></div>
+                    <div class="box-body" style="padding-bottom:0px;" >
+                        <div class="panel panel-default" style="margin: 0px;">
+	                        <div class="panel-heading">查询条件</div>
+	                        <div class="panel-body" style="margin-bottom: 0px;padding: 0px;">
+	                            <form id="formSearch" class="form-horizontal">
+	                                <div class="form-group" style="margin: 0px 2px;">
+	                                    <label class="control-label col-sm-1" for="txt_search_departmentname">帐号</label>
+	                                    <div class="col-sm-2">
+	                                        <input type="text" class="form-control" placeholder="输入帐号" name="userid"/>
+	                                    </div>
+	                                    <label class="control-label col-sm-1" for="txt_search_departmentname">名称</label>
+	                                    <div class="col-sm-2">
+	                                        <input type="text" class="form-control" placeholder="输入名称" name="name"/>
+	                                    </div>
+	                                    <div class="col-sm-3" style="text-align:left;">
+	                                        <button type="button" style="margin-left:50px" id="btn_query" class="btn btn-primary">查询</button>
+	                                    </div>
+	                                </div>
+	                            </form>
+	                        </div>
+                       </div>
+                        
+	                     <table id="userInfoTable" name="userInfoTable">
+	                            <div id="toolbar" class="btn-group">
+		                            <button id="btn_add" type="button" class="btn btn-default">
+		                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
+		                            </button>
+		                            <button id="btn_edit" type="button" class="btn btn-default">
+		                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改
+		                            </button>
+		                            <button id="btn_delete" type="button" class="btn btn-default">
+		                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
+		                            </button>
+	                            </div>
+                         </table>
+                    </div>
+                </div>
+                
+                <div id="userInfoEditForm" class="modal fade"></div>
+        </div>
+        <div th:include="main/scripts"></div>
+    </section>
+<script th:src="@{/plugins/superui/superui/content/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.js}"></script>
+<script th:src="@{/js/user/index.js}"></script>
+</body>
+</html>

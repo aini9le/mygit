@@ -3,8 +3,8 @@ package com.lii.cloud.common.entity.admin.po;
 import java.util.Date;
 import javax.persistence.*;
 
-@Table(name = "basis_role_info")
-public class RoleInfo {
+@Table(name = "basis_role")
+public class Role {
     /**
      * 主键
      */

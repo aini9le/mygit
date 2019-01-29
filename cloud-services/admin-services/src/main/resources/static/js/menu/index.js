@@ -7,10 +7,10 @@ var Menuinfo = function(){
 	
 	menu.options = {
 			tableName:"#menuInfoTable",openId:"MenuinfoEditForm",
-	    	dataUrl : MainConfig.getContextPath() + "/sysMenu/dataGrid2",  // 表格查询路径
-	    	removeUrl : MainConfig.getContextPath() + "/sysMenu/removesByIds",  //删除路径
-	    	editFormIndex : MainConfig.getContextPath() + "/sysMenu/editIndex",   //跳转到编辑页面路径
-	    	isEnableUrl: MainConfig.getContextPath() + "/sysMenu/isEnableUrl"   //启用/暂停路径
+	    	dataUrl : MainConfig.getContextPath() + "/menu/dataGrid",  // 表格查询路径
+	    	removeUrl : MainConfig.getContextPath() + "/menu/removesByIds",  //删除路径
+	    	editFormIndex : MainConfig.getContextPath() + "/menu/editIndex",   //跳转到编辑页面路径
+	    	isEnableUrl: MainConfig.getContextPath() + "/menu/isEnableUrl"   //启用/暂停路径
 	}; //参数对象
 	
 	
