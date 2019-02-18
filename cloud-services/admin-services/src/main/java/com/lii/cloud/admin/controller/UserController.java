@@ -32,6 +32,8 @@ public class UserController extends BaseConcroller<User>{
 	@RequestMapping(value = "dataGrid")
 	@ResponseBody
 	public ResultBody dataGrid(BasePageInfoExampleDTO exDto) {
+		String s = null;
+		System.out.println(s.length());
 		UIPageInfo ui = new UIPageInfo();
 		PageInfo<User> page = userService.dataGridExample(User.class, exDto);
 		ui.setRows(page.getList());

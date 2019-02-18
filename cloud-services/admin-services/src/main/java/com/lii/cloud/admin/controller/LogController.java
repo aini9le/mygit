@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.lii.cloud.admin.dto.LogPageInfoDTO;
 import com.lii.cloud.admin.services.LogService;
@@ -16,8 +15,6 @@ import com.lii.cloud.common.tools.result.ResultBody;
 @RequestMapping("/log")
 public class LogController {
 	
-	private static final String BASEURL = "page/sysLog/";
-	
 	@Autowired
 	private LogService logService;
 	
@@ -25,12 +22,6 @@ public class LogController {
 	@ResponseBody
 	public UIPageInfo getLog(LogPageInfoDTO logDto){
 		return logService.getLog(logDto);
-	}
-	
-	@RequestMapping(value="/index")
-	public ModelAndView index() {
-		ModelAndView model = new ModelAndView(BASEURL + "Index");
-		return model;
 	}
 	
 	@RequestMapping(value="/remove")

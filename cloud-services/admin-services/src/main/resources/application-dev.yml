@@ -102,8 +102,8 @@ redis:
 # ====================mongodb====================
 mongo:
   connection:
-    host: 10.1.20.229
+    host: 127.0.0.1
     port: 27017
-    userName: bootName
-    password: boot123456
-    dbName: bootDB
+    userName: sys_admin
+    password: 123456
+    dbName: sys_admin
