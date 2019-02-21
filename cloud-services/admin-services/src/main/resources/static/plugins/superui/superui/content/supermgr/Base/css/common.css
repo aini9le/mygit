@@ -413,12 +413,12 @@ textarea.form-control {
     padding-top: 5px;
 }
 
-.form-control[disabled], fieldset[disabled] .form-control {
+/* .form-control[disabled], fieldset[disabled] .form-control {
     background-color: #eee;
     opacity: 1;
     cursor: default;
     opacity: 0.6;
-}
+} */
 
 .form-control[readonly], fieldset[readonly] .form-control {
     background-color: #fff;
