@@ -8,14 +8,8 @@ import com.lii.cloud.common.base.services.BaseServiceImpl;
 import com.lii.cloud.common.entity.admin.po.User;
 import com.lii.cloud.db.mysql.mapper.imapper.admin.UserMapper;
 
-/**
- * <p>
- * 用户表 服务实现类
- * </p>
- */
 @Service
 public class UserService extends BaseServiceImpl<User>{
-
     @Resource
     private UserMapper userMapper;
 

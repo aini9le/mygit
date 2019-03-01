@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.github.pagehelper.PageInfo;
 import com.lii.cloud.common.api.base.BaseUrl;
 import com.lii.cloud.common.base.services.BaseServiceImpl;
+import com.lii.cloud.common.entity.base.dto.BaseIdDTO;
 import com.lii.cloud.common.entity.base.dto.BasePageInfoDTO;
 import com.lii.cloud.common.entity.base.dto.BasePageInfoExampleDTO;
 import com.lii.cloud.common.entity.base.dto.BaseParameterIdDTO;
@@ -71,13 +72,13 @@ public abstract class BaseConcroller<T> {
 	}
 	
 	/**
-	 * 根据id 删除数据
+	 * 根据ids 删除数据
 	 * @param ids
 	 * @return
 	 */
 	@PostMapping(value="/"+BaseUrl.removesById,produces = "application/json;charset=UTF-8")
 	@ResponseBody
-	public ResultBody removesById(@Valid BaseParameterIdDTO baseDTO,BindingResult bindingResult){
+	public ResultBody removesById(@RequestBody BaseIdDTO baseDTO,BindingResult bindingResult){
 		if (bindingResult.hasErrors()) {
             return ResultBody.error(bindingResult.getFieldError().getDefaultMessage());
         }
@@ -94,14 +95,14 @@ public abstract class BaseConcroller<T> {
 	 */
 	@PostMapping(value="/"+BaseUrl.removesByIds,produces = "application/json;charset=UTF-8")
 	@ResponseBody
-	public ResultBody removesByIds(Class<T> t,@Valid BaseParameterIdDTO baseDTO,BindingResult bindingResult){
+	public ResultBody removesByIds(Class<T> t,@RequestBody BaseIdDTO baseDTO,BindingResult bindingResult){
 		if (bindingResult.hasErrors()) {
             return ResultBody.error(bindingResult.getFieldError().getDefaultMessage());
         }
 		if(null == t){
 			t = buildClass();
 		}
-		if(baseService.removesByIds(t, baseDTO.getId()) > 0){
+		if(baseService.removesByIds(t, baseDTO.getIds()) > 0){
 			return ResultBody.success("批量删除对象数据成功");
 		}
 		return ResultBody.success("已成功执行语句，没有受影响的行！！！");

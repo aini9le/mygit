@@ -20,4 +20,5 @@
     <result column="qr_code" jdbcType="VARCHAR" property="qrCode" />
     <result column="password" jdbcType="VARCHAR" property="password" />
   </resultMap>
+  
 </mapper>

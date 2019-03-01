@@ -1,6 +1,6 @@
 server:
   port: 8888
-  context-path: /admin
+  context-path: 
 spring:
   application:
     name: admin-service
